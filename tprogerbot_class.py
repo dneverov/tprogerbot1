@@ -7,7 +7,6 @@
 
 # git clone https://github.com/dneverov/tprogerbot1
 
-#import _bot_config
 import os
 import requests  
 import datetime
@@ -76,23 +75,23 @@ def main():
         has_greetings = last_chat_text.lower() in greetings
 
         if has_greetings and today == now.day and 6 <= hour < 12:
-            greet_bot.send_message(last_chat_id, 'Доброе утро, {}'.format(last_chat_name))
+            greet_bot.send_message(last_chat_id, '1 Доброе утро, {}'.format(last_chat_name))
             #today += 1
 
         elif has_greetings and today == now.day and 12 <= hour < 17:
-            greet_bot.send_message(last_chat_id, 'Добрый день, {}'.format(last_chat_name))
+            greet_bot.send_message(last_chat_id, '2 Добрый день, {}'.format(last_chat_name))
             #today += 1
 
         elif has_greetings and today == now.day and 17 <= hour <= 23:
-            greet_bot.send_message(last_chat_id, 'Добрый вечер, {}'.format(last_chat_name))
+            greet_bot.send_message(last_chat_id, '3 Добрый вечер, {}'.format(last_chat_name))
             #today += 1
 
         elif has_greetings and today == now.day and 0 <= hour < 6:
-            greet_bot.send_message(last_chat_id, 'Доброй ночи, {}'.format(last_chat_name))
+            greet_bot.send_message(last_chat_id, '4 Доброй ночи, {}'.format(last_chat_name))
             #today += 1
 
         else:
-        	greet_bot.send_message(last_chat_id, 'Что-то пошло не так, {}!'.format(last_chat_name))
+        	greet_bot.send_message(last_chat_id, '0 Что-то пошло не так, {}!'.format(last_chat_name))
 
         new_offset = last_update_id + 1
 
