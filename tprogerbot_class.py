@@ -1,13 +1,14 @@
 #!/usr/bin/python3.4
 # -*- coding: utf-8 -*-
-# /home/denis/Документы/telegram/tproger.ru/bot/tprogerbot_class.py
+# /var/www/test/tprogerbot/my_env/tprogerbot1/tprogerbot_class.py
 # Run: python3 tprogerbot_class.py
 #
 # Килька @bot_xpeHobot
 
 # git clone https://github.com/dneverov/tprogerbot1
 
-import _bot_config
+#import _bot_config
+import os
 import requests  
 import datetime
 
@@ -43,7 +44,8 @@ class BotHandler:
 
 
 #
-greet_bot = BotHandler(_bot_config.token)  
+bot_token = os.environ["BOT_TPROGERBOT_TOKEN"]
+greet_bot = BotHandler(bot_token)  
 greetings = ('здравствуй', 'привет', 'ку', 'здорово', 'hi', 'hello', 'how are you')  
 now = datetime.datetime.now()
 
